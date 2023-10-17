@@ -5,15 +5,30 @@
   "type": "module",
   "scripts": {
     "build": "remix build",
+    "compile": "tsc",
     "dev": "remix dev --manual",
+    "format": "prettier --write .",
     "start": "remix-serve ./build/index.js",
+    "test": "jest",
     "typecheck": "tsc"
   },
+  "prettier": {
+    "semi": false,
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
+  },
+  "eslintIgnore": [
+    "/node_modules",
+    "/build",
+    "/public/build"
+  ],
   "dependencies": {
     "@remix-run/css-bundle": "^2.1.0",
     "@remix-run/node": "^2.1.0",
     "@remix-run/react": "^2.1.0",
     "@remix-run/serve": "^2.1.0",
+    "@types/uuid": "^9.0.5",
     "isbot": "^3.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -21,9 +36,16 @@
   "devDependencies": {
     "@remix-run/dev": "^2.1.0",
     "@remix-run/eslint-config": "^2.1.0",
+    "@types/jest": "^29.5.5",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
+    "eslint-config-prettier": "^9.0.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "tailwindcss": "^3.3.3",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.1.6"
   },
   "engines": {
